@@ -1,0 +1,44 @@
+
+cc_library(
+	name = "log",
+	visibility = ["//visibility:public"],
+	includes = [
+		"include/",
+	],
+	hdrs = glob([
+		"include/boost/**/*.hpp",
+		"include/boost/**/*.ipp",
+	]),
+	srcs = glob([
+		"src/**/*.cpp",
+		"src/**/*.hpp",
+		"src/**/*.c",
+		"src/**/*.h",
+	]),
+	defines = [
+		"BOOST_ALL_NO_LIB=1"
+	],
+	deps = [
+		"@com_github_bazelboost_move//:move",
+		"@com_github_bazelboost_assert//:assert",
+		"@com_github_bazelboost_mpl//:mpl",
+		"@com_github_bazelboost_type_index//:type_index",
+		"@com_github_bazelboost_static_assert//:static_assert",
+		"@com_github_bazelboost_date_time//:date_time",
+		"@com_github_bazelboost_smart_ptr//:smart_ptr",
+		"@com_github_bazelboost_phoenix//:phoenix",
+		"@com_github_bazelboost_core//:core",
+		"@com_github_bazelboost_predef//:predef",
+		"@com_github_bazelboost_range//:range",
+		"@com_github_bazelboost_type_traits//:type_traits",
+		"@com_github_bazelboost_config//:config",
+		"@com_github_bazelboost_parameter//:parameter",
+		"@com_github_bazelboost_proto//:proto",
+		"@com_github_bazelboost_regex//:regex",
+		"@com_github_bazelboost_xpressive//:xpressive",
+		"@com_github_bazelboost_lexical_cast//:lexical_cast",
+		"@com_github_bazelboost_throw_exception//:throw_exception",
+		"@com_github_bazelboost_array//:array",
+		"@com_github_bazelboost_preprocessor//:preprocessor"
+	],
+)
